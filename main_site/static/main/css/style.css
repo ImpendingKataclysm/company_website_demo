@@ -89,6 +89,16 @@ header img {
     border-radius: 0.5rem;
 }
 
+/* Images */
+
+.display-img {
+    border-radius: 0.7rem;
+    box-shadow: 0.1rem 0.1rem 0.1rem -0.1rem #000;
+    display: block;
+    margin: 0 auto;
+    width: 25rem;
+}
+
 /* Home Page */
 
 .main-link:link, .main-link:visited {
@@ -165,6 +175,10 @@ header img {
 
     header img {
         width: 6.25rem;
+    }
+
+    .display-img {
+        max-width: 15rem;
     }
 }
 
