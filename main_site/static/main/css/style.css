@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    margin: 0;
+    color: #1b1b1b;
+    height: 100vh;
+}
+
+body:before {
+    content: '';
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #81d4fa, #b8e4f9) no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+.flex-container {
+    display: flex;
+    gap: 0.9rem;
+}
+
+.main-wrapper {
+    width: 75%;
+    margin: auto;
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* Navigation */
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, #2a4d67, #4f77a9);
+    width: 100%;
+    padding: 0;
+    z-index: 1;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li a:link, nav li a:visited {
+    text-decoration: none;
+    padding: 0.5rem;
+    color: #fff;
+}
+
+nav li a:hover, nav li a:focus, nav li a:active {
+    color: #858dcd;
+}
+
+/* Header */
+
+header {
+    padding: 5rem 0 2rem 2rem;
+    background-image: linear-gradient(to bottom, #560303, #b20814);
+    color: #fff;
+}
+
+header p {
+    font-style: italic;
+}
+
+header img {
+    border-radius: 0.5rem;
+}
+
+/* Smaller Screens */
+
+@media screen and (max-width: 1000px) {
+    img {
+        width: 18.75rem;
+    }
+
+    header img {
+        width: 9.4rem;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        font-size: 0.7rem;
+    }
+
+    img {
+        width: 12.5rem;
+    }
+
+    header img {
+        width: 6.25rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .flex-container {
+        flex-direction: column;
+    }
+
+    nav .flex-container, header.flex-container {
+        flex-direction: row;
+        padding: 1.2rem;
+        gap: 0.2rem;
+    }
+}
