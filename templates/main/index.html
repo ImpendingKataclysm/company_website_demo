@@ -4,5 +4,20 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <p>Home page coming soon...</p>
+    <h2>The Best Company</h2>
+    <p>{% lorem %}</p>
+    <div class="grid-container">
+        <div class="grid-item" id="about-link">
+            <a href="{% url 'main:about' %}" class="main-link">What We Do</a>
+        </div>
+        <div class="grid-item" id="team-link">
+            <a href="{% url 'main:team' %}" class="main-link">Who We Are</a>
+        </div>
+        <div class="grid-item" id="contact-link">
+            <a href="{% url 'main:contact' %}" class="main-link">Contact Us</a>
+        </div>
+        <div class="grid-item" id="join-link">
+            <a href="{% url 'main:careers' %}" class="main-link">Join Our Team</a>
+        </div>
+    </div>
 {% endblock %}

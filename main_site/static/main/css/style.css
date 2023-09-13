@@ -32,6 +32,17 @@ body:before {
     flex: 1 0 auto;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.grid-item {
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
 footer {
     flex-shrink: 0;
 }
@@ -65,7 +76,7 @@ nav li a:hover, nav li a:focus, nav li a:active {
 /* Header */
 
 header {
-    padding: 5rem 0 2rem 2rem;
+    padding: 1rem;
     background-image: linear-gradient(to bottom, #560303, #b20814);
     color: #fff;
 }
@@ -76,6 +87,59 @@ header p {
 
 header img {
     border-radius: 0.5rem;
+}
+
+/* Home Page */
+
+.main-link:link, .main-link:visited {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    height: 10rem;
+    color: #212a8e;
+    font-weight: bold;
+    line-height: 10;
+}
+
+.main-link:hover, .main-link:focus, .main-link:active {
+    color: #054f99;
+}
+
+#about-link, #team-link, #contact-link, #join-link {
+    position: relative;
+}
+
+#about-link:before,
+#team-link:before,
+#contact-link:before,
+#join-link:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+
+#about-link:before {
+    background-image: url("../images/home-about.jpg");
+}
+
+#team-link:before {
+    background-image: url("../images/home-team.jpg");
+}
+
+#contact-link:before {
+    background-image: url("../images/home-contact.jpg");
+}
+
+#join-link:before {
+    background-image: url("../images/home-join.jpg");
 }
 
 /* Smaller Screens */
@@ -113,5 +177,9 @@ header img {
         flex-direction: row;
         padding: 1.2rem;
         gap: 0.2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
     }
 }
