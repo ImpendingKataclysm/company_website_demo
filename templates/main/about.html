@@ -4,24 +4,28 @@
 {% block title %}About{% endblock %}
 
 {% block content %}
-    <h2>Our Mission</h2>
-    <div class="flex-container">
-        <div>
-            <img src="{% static 'main/images/about1.jpg' %}" alt="..."class="display-img">
+    <section>
+        <h2>Our Mission</h2>
+        <div class="flex-container">
+            <div>
+                <img src="{% static 'main/images/about1.jpg' %}" alt="..." class="display-img">
+            </div>
+            <div>
+                <p>{% lorem %}</p>
+                <p>{% lorem %}</p>
+            </div>
         </div>
-        <div>
-            <p>{% lorem %}</p>
-            <p>{% lorem %}</p>
+    </section>
+    <section>
+        <h2>Our History</h2>
+        <div class="flex-container">
+            <div>
+                <p>{% lorem %}</p>
+                <p>{% lorem %}</p>
+            </div>
+            <div>
+                <img src="{% static 'main/images/about2.jpg' %}" alt="..." class="display-img">
+            </div>
         </div>
-    </div>
-    <h2>Our History</h2>
-    <div class="flex-container">
-        <div>
-            <p>{% lorem %}</p>
-            <p>{% lorem %}</p>
-        </div>
-        <div>
-            <img src="{% static 'main/images/about2.jpg' %}" alt="..."class="display-img">
-        </div>
-    </div>
+    </section>
 {% endblock %}
