@@ -39,3 +39,18 @@ class ContactMessage(models.Model):
     def __str__(self):
         return f'{self.name}'
 
+
+class Applicant(models.Model):
+    """
+    Database model for online job applications
+    """
+    first_name = models.CharField(max_length=MAX_FIELD_LEN, blank=True, null=True)
+    last_name = models.CharField(max_length=MAX_FIELD_LEN, blank=True, null=True)
+    email = models.EmailField()
+    phone = models.CharField(max_length=10, null=True, blank=True)
+    date_available = models.DateField()
+    resume = models.FileField(upload_to='resumes')
+    date_applied = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.last_name}, {self.first_name}'
