@@ -1,6 +1,7 @@
 from django.db import models
 
 MAX_FIELD_LEN = 80
+TXT_FIELD_LEN = 2000
 
 
 class Employee(models.Model):

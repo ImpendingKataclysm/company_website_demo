@@ -4,5 +4,35 @@
 {% block title %}Contact{% endblock %}
 
 {% block content %}
-    <p>Contact page coming soon...</p>
+    <div class="input-form card">
+        <header>
+            <h2>Send Us a Message</h2>
+            <p>We'd love to hear from you!</p>
+        </header>
+        <form
+            method="post"
+            action="{% url 'main:contact' %}"
+            class="input-form"
+        >
+            {% csrf_token %}
+            <div class="form-row">
+                <label for="name">Name</label>
+                <br>
+                {{ form.name }}
+            </div>
+            <div class="form-row">
+                <label for="email">Email Address</label>
+                <br>
+                {{ form.email }}
+            </div>
+            <div class="form-row">
+                <label for="message">Your Message</label>
+                <br>
+                {{ form.message }}
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Send" class="submit-btn">
+            </div>
+        </form>
+    </div>
 {% endblock %}
