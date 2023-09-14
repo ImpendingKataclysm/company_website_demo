@@ -2,6 +2,7 @@ from django.db import models
 
 MAX_FIELD_LEN = 80
 TXT_FIELD_LEN = 2000
+PHONE_NUM_LEN = 10
 
 
 class Employee(models.Model):
@@ -47,7 +48,7 @@ class Applicant(models.Model):
     first_name = models.CharField(max_length=MAX_FIELD_LEN, blank=True, null=True)
     last_name = models.CharField(max_length=MAX_FIELD_LEN, blank=True, null=True)
     email = models.EmailField()
-    phone = models.CharField(max_length=10, null=True, blank=True)
+    phone = models.CharField(max_length=PHONE_NUM_LEN, null=True, blank=True)
     date_available = models.DateField()
     resume = models.FileField(upload_to='resumes')
     date_applied = models.DateTimeField(auto_now_add=True)
