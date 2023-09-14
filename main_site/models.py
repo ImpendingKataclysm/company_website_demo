@@ -15,3 +15,26 @@ class Employee(models.Model):
 
     def __str__(self):
         return f"{self.last_name}, {self.first_name}: {self.role}"
+
+
+class ContactMessage(models.Model):
+    """
+    DB table for a message received from the Contact page. Contains the following
+    columns:
+    - timestamp
+    - name: sender name
+    - email: sender's email address
+    - message: message content
+    """
+    class Meta:
+        verbose_name_plural = 'Contact Messages'
+        verbose_name = 'Contact Messages'
+
+    timestamp = models.DateTimeField(auto_now_add=True)
+    name = models.CharField(verbose_name='Name', max_length=MAX_FIELD_LEN)
+    email = models.EmailField(verbose_name='Email')
+    message = models.TextField(verbose_name='Message')
+
+    def __str__(self):
+        return f'{self.name}'
+
