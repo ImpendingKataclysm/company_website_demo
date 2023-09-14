@@ -232,6 +232,11 @@ input {
 /* Smaller Screens */
 
 @media screen and (max-width: 1000px) {
+
+    .grid-col-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+
     img {
         width: 18.75rem;
     }
@@ -246,6 +251,10 @@ input {
         font-size: 0.7rem;
     }
 
+    .grid-col-3 {
+        grid-template-columns: 1fr;
+    }
+
     img {
         width: 12.5rem;
     }
@@ -256,6 +265,11 @@ input {
 
     .display-img {
         max-width: 15rem;
+    }
+
+    input {
+        font-size: 0.9rem;
+        line-height: 1;
     }
 
     .input-form.card {

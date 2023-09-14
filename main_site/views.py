@@ -40,10 +40,25 @@ class ContactPage(generic.FormView):
     def form_valid(self, form):
         success_message = 'Thank you, we will be in touch soon.'
         form.save()
-        messages.success(self.request, success_message)
+        messages.success(self.request, message=success_message)
 
         return super().form_valid(form)
 
 
-class CareersPage(generic.TemplateView):
+class CareersPage(generic.FormView):
+    """
+    Display job application form on the Careers page. When the form is submitted,
+    save the applicant to the database
+    """
+    form_class = forms.ApplicantForm
     template_name = 'main/careers.html'
+    success_url = '/'
+
+    def form_valid(self, form):
+        success_message = 'Thank you for your application.'
+        applicant = form.save(commit=False)
+
+        applicant.save()
+        messages.success(self.request, message=success_message)
+
+        return super(CareersPage, self).form_valid(form)

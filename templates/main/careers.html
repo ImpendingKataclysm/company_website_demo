@@ -4,5 +4,43 @@
 {% block title %}Careers{% endblock %}
 
 {% block content %}
-    <p>Careers page coming soon...</p>
+    <h2>Join Our Team</h2>
+    <p>Start your application today:</p>
+    <div class="card">
+        <form
+            method="POST"
+            action="{% url 'main:careers' %}"
+            enctype="multipart/form-data"
+            class="input-form"
+        >
+            {% csrf_token %}
+            <div class="form-row">
+                <label for="first_name">First Name</label>
+                {{ form.first_name }}
+            </div>
+            <div class="form-row">
+                <label for="last_name">Last Name</label>
+                {{ form.last_name }}
+            </div>
+            <div class="form-row">
+                <label for="email">Email Address</label>
+                {{ form.email }}
+            </div>
+            <div class="form-row">
+                <label for="phone">Phone Number</label>
+                {{ form.phone }}
+            </div>
+            <div class="form-row">
+                <label for="date_available">Indicate when you are available to start</label>
+                {{ form.date_available }}
+            </div>
+            <div class="form-row">
+                <label for="resume">Upload your resume</label>
+                {{ form.resume }}
+            </div>
+            <div class="form-row">
+                <input type="submit" value="Apply" class="submit-btn">
+            </div>
+        </form>
+    </div>
 {% endblock %}
